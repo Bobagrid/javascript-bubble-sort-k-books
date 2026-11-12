@@ -1,0 +1,24 @@
+//Function returns sum of its first k elements of the array (arr) which is ordered with bubble sort
+function k_elements(arr, k) {
+    let isOrdered = false;
+    while (!isOrdered) { //Order array with bubble sort
+        isOrdered = true;
+        for (let i = 0; i < arr.length - 1; i++) {
+
+            let firstIndex = arr[i];
+            let secondIndex = arr[i + 1];
+
+            if (firstIndex > secondIndex) {
+                arr[i] = secondIndex;
+                arr[i + 1] = firstIndex;
+                isOrdered = false;
+            }
+        }
+    }
+
+    let sum = 0;
+    for (let i = 0; i < k; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
